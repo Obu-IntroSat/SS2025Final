@@ -57,6 +57,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define LED_PIN_Pin GPIO_PIN_13
+#define LED_PIN_GPIO_Port GPIOC
 #define SD_CS_Pin GPIO_PIN_4
 #define SD_CS_GPIO_Port GPIOA
 #define SD_SCK_Pin GPIO_PIN_5
@@ -77,6 +79,8 @@ void Error_Handler(void);
 #define CC1101_MISO_GPIO_Port GPIOB
 #define CC1101_MOSI_Pin GPIO_PIN_15
 #define CC1101_MOSI_GPIO_Port GPIOB
+#define CC1101_GD0_Pin GPIO_PIN_8
+#define CC1101_GD0_GPIO_Port GPIOA
 #define IR_RESET_Pin GPIO_PIN_11
 #define IR_RESET_GPIO_Port GPIOA
 #define TAKE_PHOTO_Pin GPIO_PIN_12

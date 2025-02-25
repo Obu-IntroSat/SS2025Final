@@ -27,11 +27,20 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <CC1101.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
+
+
+#include <Logger.h>
+
+void LOGGER(const char *text, uint8_t len)
+{
+    HAL_UART_Transmit(&huart1, (uint8_t *)text, len, 1000);
+}
+
 
 /* USER CODE END PTD */
 
@@ -59,6 +68,18 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+
+/** Инициализация объектов для радио
+IntroSatLib::intefaces::SPI spi(&hspi2);
+IntroSatLib::intefaces::GPIO sck(CC1101_SCK_GPIO_Port, CC1101_SCK_Pin);
+IntroSatLib::intefaces::GPIO mosi(CC1101_MOSI_GPIO_Port, CC1101_MOSI_Pin);
+IntroSatLib::intefaces::GPIO miso(CC1101_MISO_GPIO_Port, CC1101_MISO_Pin);
+IntroSatLib::intefaces::GPIO reset(CC1101_CS_GPIO_Port, CC1101_CS_Pin);
+IntroSatLib::intefaces::GPIO gd0(CC1101_GD0_GPIO_Port, CC1101_GD0_Pin);
+IntroSatLib::CC1101WithGD0 trans(spi, sck, mosi, miso, reset, gd0);
+*/
+
 
 /* USER CODE END 0 */
 
@@ -100,10 +121,12 @@ int main(void)
   MX_FATFS_Init();
   /* USER CODE BEGIN 2 */
 
-  /* USER CODE END 2 */
+
+    /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
   while (1)
   {
     /* USER CODE END WHILE */
